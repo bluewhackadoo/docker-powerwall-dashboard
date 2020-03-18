@@ -207,7 +207,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Solar",
+        "title": "Solar | Grid",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -1112,7 +1112,7 @@
           {
             "decimals": null,
             "format": "percent",
-            "label": "Clouds / Humidity",
+            "label": "Clouds | Humidity",
             "logBase": 1,
             "max": "100",
             "min": "0",
