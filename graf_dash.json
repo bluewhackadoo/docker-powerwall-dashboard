@@ -1055,8 +1055,8 @@
             "measurement": "weather",
             "orderByTime": "ASC",
             "policy": "autogen",
-            "query": "SELECT mean(\"value\") FROM \"measurement\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
-            "rawQuery": false,
+            "query": "SELECT (\"main_humidity\") FROM \"weather\" WHERE coord_lat = 47.68 ",
+            "rawQuery": true,
             "refId": "C",
             "resultFormat": "time_series",
             "select": [
@@ -2375,7 +2375,7 @@
       "list": []
     },
     "time": {
-      "from": "now-24h",
+      "from": "now-2d",
       "to": "now"
     },
     "timepicker": {
