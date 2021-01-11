@@ -1077,7 +1077,7 @@
             {
               "key": "url",
               "operator": "=",
-              "value": "https://fcc-weather-api.glitch.me/api/current?lat=47.683807&lon=-121.906118"
+              "value": "\"https://fcc-weather-api.glitch.me/api/current?lat=47.683807&lon=-121.906118\""
             }
           ]
         }
