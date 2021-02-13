@@ -1,5 +1,4 @@
 FROM centos:7
-MAINTAINER JR Morgan <jr@shifti.us>
 
 LABEL Vendor="CentOS" \
       License=GPLv2 \
