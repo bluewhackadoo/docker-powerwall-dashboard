@@ -33,10 +33,12 @@ RUN mkdir -p /var/lib/grafana/dashboards && chown grafana:grafana /var/lib/grafa
 
 EXPOSE 3000
 
+ADD newcookie.sh /opt/newcookie.sh
+RUN chmod 777 /opt/newcookie.sh
 ADD run.sh /opt/run.sh
 RUN chmod -v +x /opt/run.sh
 RUN export $(grep -v "#" /etc/sysconfig/grafana-server | cut -d= -f1)
 
-ENV POWERWALL_LOCATION="lat=47.683807&lon=-121.906118"
+ENV POWERWALL_LOCATION="lat=47.6838076lon=-121.906118"
 
 CMD ["/opt/run.sh"]
