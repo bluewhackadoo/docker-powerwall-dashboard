@@ -6,6 +6,7 @@ LABEL Vendor="CentOS" \
 
 ENV POWERWALL_HOST="teslapw"
 ENV DATABASE="PowerwallData"
+ENV GF_HTTP_PORT=3023
 
 ADD powerwall.repo /etc/yum.repos.d/powerwall.repo
 RUN yum -y install epel-release
@@ -14,6 +15,7 @@ RUN yum -y --setopt=tsflags=nodocs install \
 	telegraf \
 	initscripts \
 	urw-fonts \
+    nano \
 	grafana
 
 # Defaults for InfluxDB
@@ -32,6 +34,7 @@ ADD graf_DA.yaml /etc/grafana/provisioning/dashboards/graf_DA.yaml
 RUN mkdir -p /var/lib/grafana/dashboards && chown grafana:grafana /var/lib/grafana/dashboards
 
 EXPOSE 3000
+EXPOSE 3023
 
 ADD newcookie.sh /opt/newcookie.sh
 RUN chmod 777 /opt/newcookie.sh
