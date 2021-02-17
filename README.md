@@ -49,7 +49,7 @@ set TSLAUSER="yourmail@outlook.com"
 set TSLAPASS="pa$$word"
 set GRAFANA_DASHBOARD_URL="https://raw.githubusercontent.com/liveaverage/docker-powerwall-dashboard/master/graf_dash.json"
 
-docker run --init --add-host teslapw:%POWERWALL_IP% -d -p 3023:3000 --name powerwalldash -e "GRAFANA_DASHBOARD_URL=%GRAFANA_DASHBOARD_URL%" -e "GRAFANA_WEATHER_LOCATION=%GRAFANA_WEATHER_LOCATION%" -e "POWERWALL_LOCATION=%GRAFANA_WEATHER_LOCATION%" -v %LOCAL_INFLUXDB_PATH%:/var/lib/influxdb -v %LOCAL_GRAFANA_PATH%:/var/lib/grafana -e "TSLAPASS=%TSLAPASS%" -e "TSLAUSER=%TSLAUSER%" --restart=unless-stopped liveaverage:latest
+docker run --add-host teslapw:%POWERWALL_IP% -d -p 3023:3000 --name powerwalldash -e "GRAFANA_DASHBOARD_URL=%GRAFANA_DASHBOARD_URL%" -e "GRAFANA_WEATHER_LOCATION=%GRAFANA_WEATHER_LOCATION%" -e "POWERWALL_LOCATION=%GRAFANA_WEATHER_LOCATION%" -v %LOCAL_INFLUXDB_PATH%:/var/lib/influxdb -v %LOCAL_GRAFANA_PATH%:/var/lib/grafana -e "TSLAPASS=%TSLAPASS%" -e "TSLAUSER=%TSLAUSER%" --restart=unless-stopped liveaverage:latest
  
 ```
 - Access the Grafana dashboard from your container host IP, which may require firewall exceptions for TCP3000: http://localhost:3000
