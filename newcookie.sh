@@ -7,4 +7,4 @@ userrec=$(grep -o -P '(?<=UserRecord\s)([\w|\-|\d|\=]+)' /tmp/cookie.txt)
 TSLA_COOKIE=$(echo {\"Cookie\" = \"AuthCookie=$auth\; UserRecord=$userrec\"})
 
 # Replace the cookie in powerwall.conf since influxd gets confused by the chars if we try to do env expansion from TSLA_COOKIE
-sed -i -e 's/ headers.*/headers = \'"$TSLA_COOKIE"'/g' /etc/telegraf/telegraf.d/powerwall.conf
+sed -i -e 's/    headers.*/    headers = \'"$TSLA_COOKIE"'/g' /etc/telegraf/telegraf.d/powerwall.conf

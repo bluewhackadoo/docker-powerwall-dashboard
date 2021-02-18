@@ -1,10 +1,10 @@
 # Overview
 
-This is based on the work of [@rhodesman](https://github.com/rhodesman) and his [teslaPowerDash](https://github.com/rhodesman/teslaPowerDash) repo, but hopefully enables easier ramp up to start obtaining and trending Powerwall 2 API data.
+This is based on [@liveaverage](https://github.com/liveaverage/docker-powerwall-dashboard) which is based on the work of [@rhodesman](https://github.com/rhodesman) and his [teslaPowerDash](https://github.com/rhodesman/teslaPowerDash) repo, but hopefully enables easier ramp up to start obtaining and trending Powerwall 2 API data.
 
 # Preview
 
-<a href="https://i.imgur.com/GtP725k.png" ><img src="https://i.imgur.com/GtP725k.png" alt="Grafana Dashboard Preview" width="50%"/></a>
+<a href="https://i.imgur.com/fgvvIXP.png" ><img src="https://i.imgur.com/fgvvIXP.png" alt="Grafana Dashboard Preview" width="50%"/></a>
 
 # Usage
 
