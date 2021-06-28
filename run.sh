@@ -4,7 +4,8 @@
 while [ ! -f "/tmp/cookie.txt" ]
 do
   ping teslapw -c 1
-  curl https://teslapw/api/login/Basic -k -s -i -X POST -H 'Content-Type: application/json' -d '{"username":"customer", "password":"'$TSLAPASS'", "email":"'$TSLAUSER'", "force_sm_off":false}' -c /tmp/cookie.txt
+  # curl https://teslapw/api/login/Basic -k -s -i -X POST -H 'Content-Type: application/json' -d '{"username":"customer", "password":"'$TSLAPASS'", "email":"'$TSLAUSER'", "force_sm_off":false}' -c /tmp/cookie.txt
+  curl -s -k -i -X POST -H "Content-Type: application/json" -d "{\"username\":\"customer\",\"password\":\"$TSLAPASS\", \"email\":\"$TSLAUSER\",\"force_sm_off\":false}" "https://teslapw/api/login/Basic" -c /tmp/cookie.txt
   sleep 2
 done
 
@@ -70,7 +71,8 @@ while sleep 60; do
     pkill telegraf
     sleep 3
 
-    curl https://teslapw/api/login/Basic -k -s -i -X POST -H 'Content-Type: application/json' -d '{"username":"customer", "password":"'$TSLAPASS'", "email":"'$TSLAUSER'", "force_sm_off":false}' -c /tmp/cookie.txt
+    # curl https://teslapw/api/login/Basic -k -s -i -X POST -H 'Content-Type: application/json' -d '{"username":"customer", "password":"'$TSLAPASS'", "email":"'$TSLAUSER'", "force_sm_off":false}' -c /tmp/cookie.txt
+    curl -s -k -i -X POST -H "Content-Type: application/json" -d "{\"username\":\"customer\",\"password\":\"$TSLAPASS\", \"email\":\"$TSLAUSER\",\"force_sm_off\":false}" "https://teslapw/api/login/Basic" -c /tmp/cookie.txt
 
     auth=$(grep -o -P '(?<=AuthCookie\s)([\w|\-|\d|\=]+)' /tmp/cookie.txt)
     userrec=$(grep -o -P '(?<=UserRecord\s)([\w|\-|\d|\=]+)' /tmp/cookie.txt)
